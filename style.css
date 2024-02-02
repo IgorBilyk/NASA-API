@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Tahoma" sans-serif;
+}
+
+body {
+  background: #000;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.date-wrapper {
+  padding: 2px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #ff66d8, #06d6a0);
+}
+
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 0.5em 1em;
+  font-size: 1.2em;
+  color: #fff;
+  background: #000;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%); 
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.btn {
+  width: 100%;
+  padding: 0.3rem;
+  margin: 1rem 0;
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  background: #000;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.btn:hover,
+.download {
+  cursor: pointer;
+}
+/* Data output  */
+.output-wrapper {
+  display: none;
+  width: 60%;
+  padding: 0.07rem;
+  background: linear-gradient(to right, #ebbab9, #d4adcf);
+  color: #fff;
+  border-radius: 0.2rem;
+}
+.output-container {
+  background: #000;
+  padding: 2rem;
+  border-radius: 0.2rem;
+}
+.output-title {
+  margin: 1rem 0;
+}
+.output-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.output-date {
+  margin: 2rem;
+  color: #000;
+}
+img {
+  width: 100%;
+}
+.fa-solid.fa-circle-down.download {
+  color: #000;
+  font-size: 2.5rem;
+  margin-right: 1rem;
+}
+/* Error class */
+.error-output {
+  color: tomato;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+/*Animation*/
+.dual-ring {
+  display: none;
+  position: fixed;
+  width: 80px;
+  height: 80px;
+}
+.dual-ring::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #dfc;
+  border-color: #dfc transparent #dfc transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+  -webkit-animation: lds-dual-ring 1.2s linear infinite;
+}
+
+/* Animating preloader */
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+}
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+}
+}
+/* Media queries */
+@media (max-width: 600px) {
+  .form {
+    width: 100%;
+  }
+  #calendar {
+    width: 100%;
+  }
+  .btn {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1.4rem;
+  }
+  .output-wrapper {
+    width: 100%;
+  }
+}
